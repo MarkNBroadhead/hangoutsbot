@@ -10,7 +10,7 @@ def _initialise(bot):
 def catfact(bot, event):
     try:
         r = requests.get("https://catfact.ninja/fact")
-        html_text = '<br>'.join(r.json()['fact'])
+        html_text = r.json()['fact']
     except:
         html_text = "Unable to get cat facts right meow."
         logger.exception(html_text)
